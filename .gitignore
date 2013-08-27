@@ -1,0 +1,6 @@
+test-results/
+tmp/
+routes/
+node_modules
+bower_components
+public/assets

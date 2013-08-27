@@ -1,0 +1,8 @@
+{
+  "name": "app",
+  "dependencies": {
+    "bootstrap": "~3.0.0",
+    "requirejs": "~2.1.8",
+    "font-awesome": "~3.2.1"
+  }
+}
