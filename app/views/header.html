@@ -19,13 +19,3 @@
   {{end}}
 </head>
 <body>
-<div class="container">
-  <div class="row">
-    {{template "content" .}}
-  </div>
-</div>
-{{if .DevMode}}
-  {{template "debug.html" .}}
-{{end}}
-</body>
-</html>
