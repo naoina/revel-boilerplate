@@ -14,7 +14,8 @@ module.exports = function(grunt) {
           insertRequire: ['require_main'],
           baseUrl: 'app/assets/js/',
           paths: {
-            'jquery': 'empty:'
+            'jquery': '../bower_components/jquery/jquery',
+            'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap'
           },
           out: 'public/assets/app.min.js'
         }

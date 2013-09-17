@@ -2,7 +2,9 @@
 
 define([], function () {
   function App() {
-    // TODO: not implemented yet
+    this.initialize = function () {
+      // TODO: not implemented yet
+    };  // End of this.initialize()
   }
 
   return App;

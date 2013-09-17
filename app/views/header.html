@@ -13,7 +13,23 @@
   <link href="/app/assets/bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
   <!-- endbuild -->
   {{if eq .RunMode "dev"}}
-  <script src="/app/assets/bower_components/requirejs/require.js" data-main="/app/assets/js/require_main"></script>
+  <script src="/app/assets/bower_components/requirejs/require.js"></script>
+  <script>
+    requirejs.config({
+      paths: {
+        'jquery': [
+          '../bower_components/jquery/jquery.min'
+        ],
+        'bootstrap': [
+          '../bower_components/bootstrap/dist/js/bootstrap.min'
+        ]
+      },
+      shim: {
+        'bootstrap': ['jquery']
+      }
+    });
+    require(['require_main']);
+  </script>
   {{else}}
   <script src="/public/assets/app.min.js"></script>
   {{end}}
