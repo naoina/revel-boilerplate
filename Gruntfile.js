@@ -37,6 +37,20 @@ module.exports = function(grunt) {
       }
     },
 
+    autoprefixer: {
+      build: {
+        options: {
+          browsers: ['last 2 version']
+        },
+        files: [{
+          expand: true,
+          cwd: 'public/css/',
+          src: ['**/*.css'],
+          dest: 'public/css/'
+        }]
+      }
+    },
+
     cssmin: {
       // pre-configured for usemin
     },
@@ -87,7 +101,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['app/assets/css/**/*.scss'],
-        tasks: ['sass'],
+        tasks: ['sass', 'autoprefixer'],
         options: {
           livereload: true
         }
@@ -99,13 +113,19 @@ module.exports = function(grunt) {
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', [
+    'sass',
+    'autoprefixer',
+    'imagemin',
+    'watch'
+  ]);
   grunt.registerTask('build', [
     'clean',
     'copy',
     'useminPrepare',
     'requirejs',
     'sass',
+    'autoprefixer',
     'concat',
     'cssmin',
     'imagemin',
