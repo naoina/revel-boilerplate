@@ -3,7 +3,7 @@ package controllers
 import "github.com/robfig/revel"
 
 type App struct {
-	*revel.Controller
+	TxnController
 }
 
 func (c App) Index() revel.Result {
