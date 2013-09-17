@@ -17,7 +17,7 @@ module.exports = function(grunt) {
             'jquery': '../bower_components/jquery/jquery',
             'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap'
           },
-          out: 'public/assets/app.min.js'
+          out: 'public/js/app.min.js'
         }
       }
     },
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'app/assets/css/',
           src: ['**/*.scss'],
-          dest: 'public/assets/',
+          dest: 'public/css/',
           ext: '.css'
         }]
       }
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'app/assets/img',
           src: ['**/*.{png,jpg,gif}'],
-          dest: 'public/assets/'
+          dest: 'public/img/'
         }]
       }
     },
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'app/assets/bower_components/font-awesome/font/',
           src: ['**'],
-          dest: 'public/assets/font/'
+          dest: 'public/font/'
         }]
       }
     },
@@ -94,7 +94,7 @@ module.exports = function(grunt) {
       }
     },
 
-    clean: ['public/assets/']
+    clean: ['public/*']
   });
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
