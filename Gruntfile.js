@@ -56,6 +56,17 @@ module.exports = function(grunt) {
       }
     },
 
+    copy: {
+      build: {
+        files: [{
+          expand: true,
+          cwd: 'app/assets/bower_components/font-awesome/font/',
+          src: ['**'],
+          dest: 'public/assets/font/'
+        }]
+      }
+    },
+
     useminPrepare: {
       html: 'app/views/header.html',
       options: {
@@ -91,6 +102,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('build', [
     'clean',
+    'copy',
     'useminPrepare',
     'requirejs',
     'sass',
